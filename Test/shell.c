@@ -7,10 +7,9 @@
 
 #define MAX_COMMAND_LENGTH 1024
 
-void display_prompt()
+void display_prompt(void)
 {
-	char prompt[] = "$ ";
-	write(STDOUT_FILENO, prompt, sizeof(prompt) - 1);
+	write(STDOUT_FILENO, "$ ", 2);
 	fflush(stdout);
 }
 
@@ -48,7 +47,7 @@ int execute_command (char *command)
 	}
 }
 
-int main()
+int main(void)
 {
 	char *command = NULL;
 	size_t command_size = 0;
